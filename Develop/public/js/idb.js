@@ -59,7 +59,7 @@ request.onsuccess = function(event) {
                 if (serverResponse.message) {
                     throw new Error(serverResponse);
                 }
-                const transaction = db.budgeting(['new_transaction'], 'readwrite');
+                const transaction = db.transaction(['new_transaction'], 'readwrite');
 
                 const transactionObjectStore = transaction.objectStore('new_transaction');
 
